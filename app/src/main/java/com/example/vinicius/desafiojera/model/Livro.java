@@ -3,13 +3,14 @@ package com.example.vinicius.desafiojera.model;
 import com.orm.SugarRecord;
 
 import java.io.Serializable;
+
 /**
  * Created by vinicius on 11/12/2016.
  */
 
 public class Livro extends SugarRecord implements Serializable {
     private String nome;
-    private String qtdPaginas;
+    private Integer qtdPaginas;
     private String imagem;
 
     public Livro() {
@@ -24,11 +25,11 @@ public class Livro extends SugarRecord implements Serializable {
         this.nome = nome;
     }
 
-    public String getQtdPaginas() {
+    public Integer getQtdPaginas() {
         return qtdPaginas;
     }
 
-    public void setQtdPaginas(String qtdPaginas) {
+    public void setQtdPaginas(Integer qtdPaginas) {
         this.qtdPaginas = qtdPaginas;
     }
 
