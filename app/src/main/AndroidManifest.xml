@@ -18,7 +18,7 @@
         </activity>
 
         <activity android:name=".activity.RegisterLivroActivity" />
-        <activity android:name=".activity.SelectActivity" />
+        <activity android:name=".activity.SelectLivroActivity" />
         <activity android:name=".activity.RegisterLembreteActivity" />
         <activity android:name=".activity.ListLivroActivity" />
         <activity android:name=".activity.ListLembreteActivity" />

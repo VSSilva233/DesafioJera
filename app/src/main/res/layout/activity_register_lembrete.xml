@@ -1,39 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:label="Cadastro de Lembretes"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
     android:weightSum="1">
 
-    <EditText
-        android:id="@+id/data_lembrete"
+    <Button
+        android:id="@+id/btn_data_lembrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="70dp"
-        android:hint="Data desejada"
-        android:inputType="date" />
-
-
-
-    <EditText
-        android:id="@+id/hora_lembrete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:hint="Hora desejada"
-        android:inputType="time" />
+        android:text="Data desejada" />
 
     <Button
-        android:text="Selecionar Livro"
+        android:id="@+id/btn_hora_lembrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_selecionar" />
+        android:text="Hora desejada" />
 
-
+    <Button
+        android:id="@+id/btn_selecionar_livro"
+        android:text="Selecionar Livro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,7 +42,7 @@
             android:textColor="#A82A77" />
 
         <Button
-            android:id="@+id/btn_voltar"
+            android:id="@+id/btn_voltar_lista"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"

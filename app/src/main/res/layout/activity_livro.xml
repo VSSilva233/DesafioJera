@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:label="Lista de Livros"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -8,18 +9,15 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/btn_cadastro"
+        android:layout_above="@+id/btn_cadastro_livro"
         android:layout_marginTop="10dp">
     </ListView>
 
-
-
-
     <Button
-        android:id="@+id/btn_cadastro"
+        android:id="@+id/btn_cadastro_livro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Novo Cadastro"
+        android:text="Cadastrar Livro"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:background="#6F8F99"

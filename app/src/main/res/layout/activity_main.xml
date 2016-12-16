@@ -11,7 +11,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_livros"
+            android:id="@+id/btn_list_livros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -22,7 +22,7 @@
             android:textColor="#A82A77" />
 
         <Button
-            android:id="@+id/btn_lembretes"
+            android:id="@+id/btn_list_lembretes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"

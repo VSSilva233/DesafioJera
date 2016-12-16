@@ -13,10 +13,6 @@ public class Livro extends SugarRecord implements Serializable {
     private Integer qtdPaginas;
     private String imagem;
 
-    public Livro() {
-
-    }
-
     public String getNome() {
         return nome;
     }
@@ -40,6 +36,8 @@ public class Livro extends SugarRecord implements Serializable {
     public void setImagem(String imagem) {
         this.imagem = imagem;
     }
+
+
 }
 
 

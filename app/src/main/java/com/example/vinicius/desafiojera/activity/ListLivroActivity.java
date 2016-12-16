@@ -19,11 +19,14 @@ import butterknife.OnClick;
 /**
  * Created by vinicius on 11/12/2016.
  */
-public class ListLivroActivity extends AppCompatActivity {
+public class ListLivroActivity extends AppCompatActivity{
     @BindView(R.id.list)
     ListView listView;
 
     private LivroListAdapter adapter;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +36,7 @@ public class ListLivroActivity extends AppCompatActivity {
 
     }
 
-    @OnClick(R.id.btn_cadastro)
+    @OnClick(R.id.btn_cadastro_livro)
     public void cadastro(Button button){
         Intent irParaCadastroLivro = new Intent(ListLivroActivity.this, RegisterLivroActivity.class);
         startActivity(irParaCadastroLivro);
@@ -51,5 +54,7 @@ public class ListLivroActivity extends AppCompatActivity {
         super.onResume();
         updateList();
     }
+
+
 }
 

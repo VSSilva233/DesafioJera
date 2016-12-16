@@ -22,13 +22,13 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.btn_livros)
+    @OnClick(R.id.btn_list_livros)
     public void livros(Button button){
         Intent irParaLivros = new Intent(MainActivity.this, ListLivroActivity.class);
         startActivity(irParaLivros);
     }
 
-    @OnClick(R.id.btn_lembretes)
+    @OnClick(R.id.btn_list_lembretes)
     public void lembretes(Button button){
         Intent irParaLembretes = new Intent(MainActivity.this, ListLembreteActivity.class);
         startActivity(irParaLembretes);

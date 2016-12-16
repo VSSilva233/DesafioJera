@@ -8,9 +8,9 @@ import android.widget.ListView;
 
 import com.example.vinicius.desafiojera.R;
 import com.example.vinicius.desafiojera.adapter.LembreteListAdapter;
-import com.example.vinicius.desafiojera.adapter.LivroListAdapter;
+
 import com.example.vinicius.desafiojera.model.Lembrete;
-import com.example.vinicius.desafiojera.model.Livro;
+
 
 import java.util.List;
 
@@ -35,8 +35,8 @@ public class ListLembreteActivity extends AppCompatActivity {
 
     }
 
-    @OnClick(R.id.btn_cadastro)
-    public void cadastro(Button button){
+    @OnClick(R.id.btn_cadastro_lembrete)
+    public void cadastro(Button button) {
         Intent irParaCadastroLembrete = new Intent(ListLembreteActivity.this, RegisterLembreteActivity.class);
         startActivity(irParaCadastroLembrete);
     }
