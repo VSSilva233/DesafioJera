@@ -29,19 +29,18 @@ public class RegisterLivroActivity extends AppCompatActivity {
 
     @BindView(R.id.img_livro)
     ImageView imagemLivro;
-    @BindView(R.id.nome_livro)
-    EditText nomeLivro;
-    @BindView(R.id.qtd_pagina)
-    EditText qtdPaginas;
-    @BindView(R.id.btn_salvar)
-    Button btnSalvar;
-    @BindView(R.id.btn_voltar)
-    Button btnVoltar;
+    @BindView(R.id.edit_nome_livro)
+    EditText editNomeLivro;
+    @BindView(R.id.edit_qtd_pagina)
+    EditText editQtdPaginas;
+    @BindView(R.id.btn_salvar_livro)
+    Button btnSalvarLivro;
+    @BindView(R.id.btn_voltar_menu)
+    Button btnVoltarMenu;
 
     File imageFile;
     Livro livro;
     public static final String PRODUCT_KEY = "EDITING";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,30 +49,29 @@ public class RegisterLivroActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.btn_salvar)
-    public void salvar(Button button){
+    @OnClick(R.id.btn_salvar_livro)
+    public void salvar(Button button) {
         //String image = imageFile.getAbsolutePath();
-        String image = "Teste";
-        String name = nomeLivro.getText().toString();
-        Integer page = Integer.parseInt(qtdPaginas.getText().toString());
+        //String image = "Teste";
+        String name = editNomeLivro.getText().toString();
+        String qtdPagina = editQtdPaginas.getText().toString();
 
-        Livro livro = new Livro();
-
-        if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(image) && page!=0) {
-            livro.setImagem(image);
+        //Verificação dos campos, se estão nullos ou vazios
+        if ((name == null || name.isEmpty()) || (qtdPagina== null || qtdPagina.isEmpty())){
+            Toast.makeText(RegisterLivroActivity.this, "Todos campos devem ser preenchidos!", Toast.LENGTH_SHORT).show();
+        }else{
+            Livro livro = new Livro();
             livro.setNome(name);
-            livro.setQtdPaginas(page);
+            livro.setQtdPaginas(qtdPagina);
             livro.save();
             Toast.makeText(RegisterLivroActivity.this, "Livro salvo!", Toast.LENGTH_SHORT).show();
             finish();
-        } else {
-            Toast.makeText(RegisterLivroActivity.this, "Todos os campos devem ser preechidos.", Toast.LENGTH_SHORT).show();
+
         }
-
-
     }
 
-    @OnClick(R.id.btn_voltar)
+
+    @OnClick(R.id.btn_voltar_menu)
     public void sair(Button button) {
         finish();
     }

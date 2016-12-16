@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 public class Livro extends SugarRecord implements Serializable {
     private String nome;
-    private Integer qtdPaginas;
+    private String qtdPaginas;
     private String imagem;
 
     public String getNome() {
@@ -21,11 +21,11 @@ public class Livro extends SugarRecord implements Serializable {
         this.nome = nome;
     }
 
-    public Integer getQtdPaginas() {
+    public String getQtdPaginas() {
         return qtdPaginas;
     }
 
-    public void setQtdPaginas(Integer qtdPaginas) {
+    public void setQtdPaginas(String qtdPaginas) {
         this.qtdPaginas = qtdPaginas;
     }
 

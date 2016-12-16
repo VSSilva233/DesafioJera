@@ -37,10 +37,12 @@ public class LembreteListAdapter extends ArrayAdapter<Lembrete> {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-
+        Livro livro;
         final Lembrete lembrete = getItem(position);
-        holder.data.setText(lembrete.getData().toString());
-        holder.hora.setText(lembrete.getHora().toString());
+        holder.txtDataLembrete.setText(lembrete.getData().toString());
+        holder.txtHoraLembrete.setText(lembrete.getHora().toString());
+        holder.txtNomeLivro.setText(lembrete.getLivro().getNome().toString());
+
         Bitmap bm = BitmapFactory.decodeFile(lembrete.getLivro().getImagem());
         return convertView;
     }
@@ -48,9 +50,11 @@ public class LembreteListAdapter extends ArrayAdapter<Lembrete> {
     class ViewHolder {
         @BindView(R.id.img_livro)
         ImageView imagem;
-        @BindView(R.id.data_lembrete)
-        TextView data;
-        @BindView(R.id.hora_lembrete)
-        TextView hora;
+        @BindView(R.id.txt_data_lembrete)
+        TextView txtDataLembrete;
+        @BindView(R.id.txt_hora_lembrete)
+        TextView txtHoraLembrete;
+        @BindView(R.id.txt_nome_livro)
+        TextView txtNomeLivro;
     }
 }

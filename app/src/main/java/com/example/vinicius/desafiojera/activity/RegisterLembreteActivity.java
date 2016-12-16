@@ -34,10 +34,6 @@ import butterknife.OnClick;
 
 public class RegisterLembreteActivity extends AppCompatActivity {
     static final int ACTIVITY_2_REQUEST = 1;
-
-
-
-
     @BindView(R.id.edit_data_lembrete)
     EditText editDataLembrete;
     @BindView(R.id.edit_hora_lembrete)
@@ -55,10 +51,6 @@ public class RegisterLembreteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_lembrete);
         ButterKnife.bind(this);
-
-
-
-
     }
 
     @OnClick(R.id.btn_selecionar_livro)
@@ -86,8 +78,8 @@ public class RegisterLembreteActivity extends AppCompatActivity {
         String hora = editHoraLembrete.getText().toString();
 
         //Fazendo verifação dos dados, se são diferentes de null
-        if(livro == null ) {
-            Toast.makeText(RegisterLembreteActivity.this, "Livro deve ser selecionado", Toast.LENGTH_SHORT).show();
+        if((livro == null )|| (editHoraLembrete == null) ||(editDataLembrete == null)){
+            Toast.makeText(RegisterLembreteActivity.this, "Todos campos devem ser preenchidos!", Toast.LENGTH_SHORT).show();
         }else{
             Lembrete lembrete = new Lembrete();
             lembrete.setData(data);
@@ -95,7 +87,7 @@ public class RegisterLembreteActivity extends AppCompatActivity {
             lembrete.setLivro(livro);
             lembrete.save();
             Toast.makeText(RegisterLembreteActivity.this, "Lembrete Salvo!", Toast.LENGTH_SHORT).show();
-finish();
+            finish();
         }
     }
 

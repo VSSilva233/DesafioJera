@@ -9,28 +9,40 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:padding="10dp"
-        android:src="@drawable/livro"/>
+        android:src="@drawable/livro"
+        android:layout_alignBottom="@+id/txt_data_lembrete"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
-        android:id="@+id/data_lembrete"
+        android:id="@+id/txt_data_lembrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:layout_toRightOf="@+id/img_livro"
         android:hint="Nome"
-        android:padding="3dp"/>
+        android:padding="3dp"
+        android:layout_below="@+id/txt_hora_lembrete"
+        android:layout_toEndOf="@+id/img_livro" />
 
     <TextView
-        android:id="@+id/hora_lembrete"
+        android:id="@+id/txt_nome_livro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/data_lembrete"
-        android:layout_marginTop="4dp"
         android:textSize="18sp"
-        android:layout_toRightOf="@+id/img_livro"
-        android:layout_toEndOf="@+id/data_lembrete"
+        android:hint="Nome"
+        android:padding="3dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/txt_data_lembrete" />
+
+    <TextView
+        android:id="@+id/txt_hora_lembrete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
         android:hint="Paginas"
         android:padding="3dp"
-        />
+        android:layout_below="@+id/txt_nome_livro"
+        android:layout_alignStart="@+id/txt_data_lembrete" />
+    />
 
 </RelativeLayout>
