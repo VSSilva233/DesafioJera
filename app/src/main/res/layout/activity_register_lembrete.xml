@@ -7,17 +7,19 @@
     android:padding="16dp"
     android:weightSum="1">
 
-    <Button
-        android:id="@+id/btn_data_lembrete"
+    <EditText
+        android:id="@+id/edit_data_lembrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Data desejada" />
+        android:inputType="date"
+        android:hint="Data desejada" />
 
-    <Button
-        android:id="@+id/btn_hora_lembrete"
+    <EditText
+        android:id="@+id/edit_hora_lembrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hora desejada" />
+        android:inputType="time"
+        android:hint="Hora desejada" />
 
     <Button
         android:id="@+id/btn_selecionar_livro"

@@ -39,8 +39,8 @@ public class LembreteListAdapter extends ArrayAdapter<Lembrete> {
         }
 
         final Lembrete lembrete = getItem(position);
-        holder.data.setText(lembrete.getDataLembrete().toString());
-        holder.hora.setText(lembrete.getHoraLembrete().toString());
+        holder.data.setText(lembrete.getData().toString());
+        holder.hora.setText(lembrete.getHora().toString());
         Bitmap bm = BitmapFactory.decodeFile(lembrete.getLivro().getImagem());
         return convertView;
     }
