@@ -9,16 +9,18 @@
 
     <EditText
         android:id="@+id/edit_data_lembrete"
+        android:digits="0123456789."
+        android:inputType="numberDecimal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="date"
         android:hint="Data desejada" />
 
     <EditText
         android:id="@+id/edit_hora_lembrete"
+        android:digits="0123456789."
+        android:inputType="numberDecimal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="time"
         android:hint="Hora desejada" />
 
     <Button
