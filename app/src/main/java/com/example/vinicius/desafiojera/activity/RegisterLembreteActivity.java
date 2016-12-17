@@ -1,39 +1,23 @@
 package com.example.vinicius.desafiojera.activity;
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.vinicius.desafiojera.R;
 import com.example.vinicius.desafiojera.model.Lembrete;
 import com.example.vinicius.desafiojera.model.Livro;
 
-import org.w3c.dom.Text;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
-import java.util.Timer;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-
-/**
- * Created by Vinicius on 14/12/2016.
- */
-
 public class RegisterLembreteActivity extends AppCompatActivity {
-    static final int ACTIVITY_2_REQUEST = 1;
+    static final int ACTIVITY_2_REQUEST = 1; //Criado para o app não se perder ao minimizalo ou abrir outro app;
+    //Utilizando ButterKnife para injeção de Views
     @BindView(R.id.edit_data_lembrete)
     EditText editDataLembrete;
     @BindView(R.id.edit_hora_lembrete)
@@ -46,6 +30,7 @@ public class RegisterLembreteActivity extends AppCompatActivity {
     Lembrete lembrete;
     Livro livro;
 
+    //Chamando/criando layout activity registro(cadastro) de lembretes
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,34 +38,35 @@ public class RegisterLembreteActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
+    //Criando uma ação/intenção no botão, que é levar para activity selecionar livro
     @OnClick(R.id.btn_selecionar_livro)
     public void selecionarLivro() {
         Intent intent = new Intent(this, SelectLivroActivity.class);
-        startActivityForResult(intent,  ACTIVITY_2_REQUEST);
+        startActivityForResult(intent, ACTIVITY_2_REQUEST);
     }
 
+    //Verificando se o usuário está no app e se enviou o livro escolhido
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == ACTIVITY_2_REQUEST) {
-            if(resultCode == RESULT_OK){
+            if (resultCode == RESULT_OK) {
                 String resultado = data.getStringExtra("resultado");
-
+                //Apresentando ao usuário o livro escolhido
                 livro = Livro.findById(Livro.class, Long.parseLong(resultado));
                 Toast.makeText(this, "Você selecionou o Livro " + livro.getNome() + "!", Toast.LENGTH_LONG).show();
             }
         }
-
     }
-
+    //Criando uma ação no botão de pegar os dados fornecidos pelo usuário e salva-los!
     @OnClick(R.id.btn_salvar_lembrete)
     public void salvarLembrete(Button button) {
         String data = editDataLembrete.getText().toString();
         String hora = editHoraLembrete.getText().toString();
 
-        //Fazendo verifação dos dados, se são diferentes de null
-        if((livro == null )|| (editHoraLembrete == null) ||(editDataLembrete == null)){
+        //Fazendo verifação e validações dos dados
+        if ((livro == null) || (editHoraLembrete == null) || (editDataLembrete == null)) {
             Toast.makeText(RegisterLembreteActivity.this, "Todos campos devem ser preenchidos!", Toast.LENGTH_SHORT).show();
-        }else{
+        } else {
             Lembrete lembrete = new Lembrete();
             lembrete.setData(data);
             lembrete.setHora(hora);
@@ -91,6 +77,7 @@ public class RegisterLembreteActivity extends AppCompatActivity {
         }
     }
 
+    //Criando uma ação no botão de poder voltar para a lista de lembretes!
     @OnClick(R.id.btn_voltar_lista)
     public void sair(Button button) {
         finish();
